@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Tools
 //             Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath),
 //             "Resources\\build-lambda-zip.exe");
 // #endif
-            private static readonly string BuildLambdaZipCliPath="build-lambda-zip.exe";
+            private static readonly string BuildLambdaZipCliPath=Path.Join(Environment.CurrentDirectory, "build-lambda-zip.exe");
         static IDictionary<string, Version> NETSTANDARD_LIBRARY_VERSIONS = new Dictionary<string, Version>
         {
             { "netcoreapp1.0", Version.Parse("1.6.0") },

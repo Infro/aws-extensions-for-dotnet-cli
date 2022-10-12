@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using Amazon.Common.DotNetCli.Tools.CLi;
 using Amazon.Common.DotNetCli.Tools.Commands;
 using Amazon.Lambda.Tools.Commands;
@@ -10,6 +12,25 @@ namespace Amazon.Lambda.Tools
     {
         static void Main(string[] args)
         {
+            //http://www.rohitab.com/discuss/topic/31681-c-run-program-from-memory-and-not-file/
+            // Console.WriteLine("Did we at least start?");
+            // var fileName = "build-lambda-zip.exe";
+            // fileName = Path.Join(Environment.CurrentDirectory, fileName);
+            // if (!File.Exists(fileName)) using (var readmyinstall = Assembly.GetExecutingAssembly().GetManifestResourceStream(fileName))
+            //     {
+            //         if (readmyinstall != null)
+            //             using (var writemyinstall = File.Open(fileName, FileMode.CreateNew, FileAccess.Write, FileShare.ReadWrite))
+            //             {
+            //                 readmyinstall?.CopyTo(writemyinstall);
+            //                 writemyinstall.Flush();
+            //             }
+            //         else
+            //         {
+            //             // Console.WriteLine(typeof(Program).GetType().Assembly);
+            //             foreach (string name in typeof(Program).GetType().Assembly.GetManifestResourceNames()) Console.WriteLine(name);
+            //         }
+            //     }
+            //https://github.com/dotnet/sdk/issues/12359
             var application = new Application("lambda", "Amazon Lambda Tools for .NET Core applications", "https://github.com/aws/aws-extensions-for-dotnet-cli, https://github.com/aws/aws-lambda-dotnet",
                 new List<ICommandInfo>()
                 {
@@ -20,7 +41,7 @@ namespace Amazon.Lambda.Tools
                     new CommandInfo<DeleteFunctionCommand>(DeleteFunctionCommand.COMMAND_NAME, DeleteFunctionCommand.COMMAND_DESCRIPTION, DeleteFunctionCommand.DeleteCommandOptions, DeleteFunctionCommand.COMMAND_ARGUMENTS),
                     new CommandInfo<GetFunctionConfigCommand>(GetFunctionConfigCommand.COMMAND_NAME, GetFunctionConfigCommand.COMMAND_DESCRIPTION, GetFunctionConfigCommand.GetConfigCommandOptions, GetFunctionConfigCommand.COMMAND_ARGUMENTS),
                     new CommandInfo<UpdateFunctionConfigCommand>(UpdateFunctionConfigCommand.COMMAND_NAME, UpdateFunctionConfigCommand.COMMAND_DESCRIPTION, UpdateFunctionConfigCommand.UpdateCommandOptions, UpdateFunctionConfigCommand.COMMAND_ARGUMENTS),
-                    
+
                     new GroupHeaderInfo("Commands to deploy and manage AWS Serverless applications using AWS CloudFormation:"),
                     new CommandInfo<DeployServerlessCommand>(DeployServerlessCommand.COMMAND_NAME, DeployServerlessCommand.COMMAND_DESCRIPTION, DeployServerlessCommand.DeployServerlessCommandOptions, DeployServerlessCommand.COMMAND_ARGUMENTS),
                     new CommandInfo<ListServerlessCommand>(ListServerlessCommand.COMMAND_NAME, ListServerlessCommand.COMMAND_DESCRIPTION, ListServerlessCommand.ListCommandOptions),

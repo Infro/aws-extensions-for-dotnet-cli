@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <PackageId>Amazon.Lambda.Tools</PackageId>
     <PackageTags>AWS;Amazon;Lambda</PackageTags>
-    <!-- <PackAsTool>true</PackAsTool> -->
+    <PackAsTool>true</PackAsTool>
     <ToolCommandName>dotnet-lambda</ToolCommandName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Amazon.com, Inc</Company>
@@ -20,8 +20,8 @@
     <TrimMode>Link</TrimMode>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
-    <PublishReadyToRun>true</PublishReadyToRun> -->
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier> -->
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Resources\build-lambda-zip.exe">
