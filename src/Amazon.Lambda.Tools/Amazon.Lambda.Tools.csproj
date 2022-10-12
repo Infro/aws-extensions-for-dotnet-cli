@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Description>Amazon.Lambda.Tools adds commands to the dotnet cli to deploy AWS Lambda functions.</Description>
     <AssemblyTitle>Amazon.Lambda.Tools</AssemblyTitle>
-    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0</TargetFrameworks>
     <AssemblyName>dotnet-lambda</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>Amazon.Lambda.Tools</PackageId>
     <PackageTags>AWS;Amazon;Lambda</PackageTags>
-    <PackAsTool>true</PackAsTool>
+    <!-- <PackAsTool>true</PackAsTool> -->
     <ToolCommandName>dotnet-lambda</ToolCommandName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Amazon.com, Inc</Company>
@@ -16,6 +16,12 @@
     <Product>AWS Lambda Tools for .NET CLI</Product>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <Version>5.4.5</Version>
+    <!-- <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>Link</TrimMode>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <PublishReadyToRun>true</PublishReadyToRun> -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Resources\build-lambda-zip.exe">

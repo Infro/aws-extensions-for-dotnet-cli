@@ -20,15 +20,16 @@ namespace Amazon.Lambda.Tools
         private const string Shebang = "#!";
         private const char LinuxLineEnding = '\n';
         private const string BootstrapFilename = "bootstrap";
-#if NETCOREAPP3_1_OR_GREATER        
-        private static readonly string BuildLambdaZipCliPath = Path.Combine(
-            Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().Location).LocalPath),
-            "Resources\\build-lambda-zip.exe");
-#else
-        private static readonly string BuildLambdaZipCliPath = Path.Combine(
-            Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath),
-            "Resources\\build-lambda-zip.exe");
-#endif
+// #if NETCOREAPP3_1_OR_GREATER        
+//         private static readonly string BuildLambdaZipCliPath = Path.Combine(
+//             Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().Location).LocalPath),
+//             "Resources\\build-lambda-zip.exe");
+// #else
+//         private static readonly string BuildLambdaZipCliPath = Path.Combine(
+//             Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath),
+//             "Resources\\build-lambda-zip.exe");
+// #endif
+            private static readonly string BuildLambdaZipCliPath="build-lambda-zip.exe";
         static IDictionary<string, Version> NETSTANDARD_LIBRARY_VERSIONS = new Dictionary<string, Version>
         {
             { "netcoreapp1.0", Version.Parse("1.6.0") },

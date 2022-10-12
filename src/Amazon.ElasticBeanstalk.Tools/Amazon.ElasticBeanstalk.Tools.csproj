@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0</TargetFrameworks>
     <PackageId>Amazon.ElasticBeanstalk.Tools</PackageId>
     <PackageTags>AWS;Amazon;Beanstalk</PackageTags>
     <PackAsTool>true</PackAsTool>
